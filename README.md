@@ -45,6 +45,12 @@ $app->get('/blog/{page}', function($page) use ($app) {
 $app->run();
 ```
 
+twig:
+```html
+
+{{ paginator(paginator) }}
+```
+
 Install
 -------
 
