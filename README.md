@@ -45,9 +45,8 @@ $app->get('/blog/{page}', function($page) use ($app) {
 $app->run();
 ```
 
-twig:
+twig: test.html.twig
 ```html
-
 {{ paginator(paginator) }}
 ```
 
