@@ -22,15 +22,17 @@ class PaginatorServiceProvider implements ServiceProviderInterface
     {
         $app['paginator.template']  = 'Paginator.html.twig';
         $app['paginator.range']     = 5;
-
         $app['twig.loader']->addLoader(new Twig_Loader_Filesystem(__DIR__ . '/../View'));
-
-        //$app['twig.path'][] = __DIR__ . '/../View';
-        $app['twig']->addExtension(new TwigPaginatorExtension());
+        
     }
 
     public function boot(Application $app)
     {
+        $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 
+            $twig->addExtension(new TwigPaginatorExtension());
+
+            return $twig;
+        }));
     }
 }
