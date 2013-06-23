@@ -1,0 +1,41 @@
+{# default Sliding pagination control implementation #}
+
+{% if pageCount > 1 %}
+
+<div class="pagination pagination-small">
+    <ul>
+        {% if current != first %}
+        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: first})) }}"><i class="icon-double-angle-left"></i></a></li>
+        {% else %}
+        <li class="disabled"><span><i class="icon-double-angle-left"></i></span></li>
+        {% endif %}
+
+        {% if previous is defined and current != previous %}
+        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: previous})) }}"><i class="icon-angle-left"></i></a></li>
+        {% else %}
+        <li class="disabled"><span><i class="icon-angle-left"></i></span></li>
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: page})) }}">{{ page }}</a></li>
+            {% else %}
+                <li class="active"><span>{{ page }}</span></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if next is defined and current != next %}
+        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: next})) }}"><i class="icon-angle-right"></i></a></li>
+        {% else %}
+        <li class="disabled"><span><i class="icon-angle-right"></i></span></li>
+        {% endif %}
+
+        {% if current != last %}
+        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: last})) }}"><i class="icon-double-angle-right"></i></a></li>
+        {% else %}
+        <li class="disabled"><span><i class="icon-double-angle-right"></i></span></li>
+        {% endif %}
+    </ul>
+</div>
+
+{% endif %}

@@ -1,0 +1,30 @@
+{
+    "name": "euskadi31/paginator-service-provider",
+    "description": "Paginator service provider for Silex",
+    "keywords": ["paginator", "pagination", "silex", "provider", "service"],
+    "type": "library",
+    "homepage": "https://github.com/euskadi31/PaginatorServiceProvider",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Axel Etcheverry",
+            "email": "faxel@etcheverry.biz",
+            "homepage": "http://twitter.com/euskadi31"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "~1.0",
+        "twig/twig": ">=1.8.0,<2.0-dev",
+        "symfony/twig-bridge": "~2.1"
+    },
+    "require-dev": {
+        "atoum/atoum": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Paginator": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

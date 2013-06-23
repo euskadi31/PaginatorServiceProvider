@@ -1,13 +1,12 @@
-# Bootstrap
-app/bootstrap*
+.DS_store
 
-# Symfony directories
-vendor/*
-*/logs/*
-*/cache/*
-web/uploads/*
-web/bundles/*
+# Directories
+vendor
+cache
 
-# Configuration files
-app/config/parameters.ini
-app/config/parameters.yml
+# Files
+demo/test.php
+
+# Composer
+composer.lock
+composer.phar
