@@ -50,9 +50,10 @@ Install
 
 Using composer installer and autoloader is probably the easiest way to install Paginator and get it running. 
 What you need is just a composer.json file in the root directory of your project:
-
- {
-     "require": {
-         "euskadi31/paginator-service-provider": "master-dev"
-     }
- }
+```json
+{
+    "require": {
+        "euskadi31/paginator-service-provider": "master-dev"
+    }
+}
+```
