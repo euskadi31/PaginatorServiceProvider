@@ -3,7 +3,7 @@
 {% if pageCount > 1 %}
 
 <div>
-    <ul class="pagination">
+    <ul class="pagination pagination-sm">
         {% if current != first %}
         <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: first})) }}"><i class="glyphicon glyphicon-fast-backward"></i></a></li>
         {% else %}
