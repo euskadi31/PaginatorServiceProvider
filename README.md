@@ -58,7 +58,7 @@ What you need is just a composer.json file in the root directory of your project
 ```json
 {
     "require": {
-        "euskadi31/paginator-service-provider": "master-dev"
+        "euskadi31/paginator-service-provider": "dev-master"
     }
 }
 ```
