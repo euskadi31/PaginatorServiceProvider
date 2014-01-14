@@ -42,9 +42,17 @@ class TwigPaginatorExtension extends Twig_Extension
         
         $paginator->setPageRange($globals['app']['paginator.range']);
 
+        $context = $paginator->getPages();
+
+        $attributes = clone $globals['app']['request']->attributes;
+        $attributes->remove('_route');
+        $attributes->remove('_route_params');
+
+        $context['query'] = $globals['app']['request']->query->all() + $attributes->all();
+
         return $globals['app']['twig']->render(
             $globals['app']['paginator.template'], 
-            $paginator->getPages()
+            $context
         );
     }
 

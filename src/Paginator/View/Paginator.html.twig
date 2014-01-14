@@ -5,33 +5,33 @@
 <div>
     <ul class="pagination pagination-sm">
         {% if current != first %}
-        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: first})) }}"><i class="glyphicon glyphicon-fast-backward"></i></a></li>
+        <li><a href="{{ path(app.request.get('_route'), query|merge({page: first})) }}"><i class="glyphicon glyphicon-fast-backward"></i></a></li>
         {% else %}
         <li class="disabled"><span><i class="glyphicon glyphicon-fast-backward"></i></span></li>
         {% endif %}
 
         {% if previous is defined and current != previous %}
-        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: previous})) }}"><i class="glyphicon glyphicon-step-backward"></i></a></li>
+        <li><a href="{{ path(app.request.get('_route'), query|merge({page: previous})) }}"><i class="glyphicon glyphicon-step-backward"></i></a></li>
         {% else %}
         <li class="disabled"><span><i class="glyphicon glyphicon-step-backward"></i></span></li>
         {% endif %}
 
         {% for page in pagesInRange %}
             {% if page != current %}
-                <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: page})) }}">{{ page }}</a></li>
+                <li><a href="{{ path(app.request.get('_route'), query|merge({page: page})) }}">{{ page }}</a></li>
             {% else %}
                 <li class="active"><span>{{ page }}</span></li>
             {% endif %}
         {% endfor %}
 
         {% if next is defined and current != next %}
-        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: next})) }}"><i class="glyphicon glyphicon-step-forward"></i></a></li>
+        <li><a href="{{ path(app.request.get('_route'), query|merge({page: next})) }}"><i class="glyphicon glyphicon-step-forward"></i></a></li>
         {% else %}
         <li class="disabled"><span><i class="glyphicon glyphicon-step-forward"></i></span></li>
         {% endif %}
 
         {% if current != last %}
-        <li><a href="{{ path(app.request.get('_route'), app.request.query.all()|merge({page: last})) }}"><i class="glyphicon glyphicon-fast-forward"></i></a></li>
+        <li><a href="{{ path(app.request.get('_route'), query|merge({page: last})) }}"><i class="glyphicon glyphicon-fast-forward"></i></a></li>
         {% else %}
         <li class="disabled"><span><i class="glyphicon glyphicon-fast-forward"></i></span></li>
         {% endif %}
