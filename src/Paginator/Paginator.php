@@ -75,6 +75,26 @@ class Paginator implements Countable
      * @var array
      */
     protected $totalItemCount = 0;
+    
+    /**
+     * Constructor
+     *
+     * @param int $totalItemsCount
+     * @param int $itemCountPerPage
+     * @param int $currentPageNumber
+     */
+    public function __construct($totalItemsCount = null, $itemCountPerPage = null, $currentPageNumber = null)
+    {
+        if($totalItemsCount) {
+            $this->setTotalItemCount($totalItemsCount);
+        }
+        if($itemCountPerPage) {
+            $this->setItemCountPerPage($itemCountPerPage);
+        }
+        if($currentPageNumber) {
+            $this->setCurrentPageNumber($currentPageNumber);
+        }
+    }
 
     /**
      * Sets the default scrolling style.
