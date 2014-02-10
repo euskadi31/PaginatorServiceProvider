@@ -32,10 +32,7 @@ $app->get('/blog/{page}', function($page) use ($app) {
 
     $count = 150; // number of items
 
-    $paginator = new Paginator\Paginator();
-    $paginator->setCurrentPageNumber($page); // set current page
-    $paginator->setItemCountPerPage(20); // items per page, default : 10
-    $paginator->setTotalItemCount($count);
+    $paginator = new Paginator\Paginator($count, 20, $page); //total items, items per page, current page
 
     return $app['twig']->render('test.html.twig', array(
         'paginator' => $paginator
